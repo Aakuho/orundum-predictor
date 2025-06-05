@@ -28,7 +28,7 @@ export default function FormContainer({ formData, updateField }: FormContainerPr
             onChange={e => updateField('currentOrundum', e.target.value)}
             type="number"
             placeholder="Current Orundum"
-            description="The amount of orundum in your posession rn"
+            description="The amount of Orundum in your posession"
         />
         <Input
             type="date"
@@ -42,7 +42,7 @@ export default function FormContainer({ formData, updateField }: FormContainerPr
             placeholder="Annihilation Cap"
             value={formData.annihilationCap}
             onChange={e => updateField('annihilationCap', e.target.value)}
-            description="Your current annihilation cap"
+            description="Your current Orundum Annihilation cap"
         />
 
         <RadioButton
@@ -54,14 +54,14 @@ export default function FormContainer({ formData, updateField }: FormContainerPr
         <RadioButton
             label="Monthly card"
             value={formData.includeMembership}
-            description="do you have monthly card gng yes or no"
+            description="Include Monthly Card daily Orundum"
             onToggle={() => updateField('includeMembership', !formData.includeMembership)}
         />
         <RadioButton
             label="Will spend OP?"
             value={formData.willSpendOp}
             onToggle={() => updateField('willSpendOp', !formData.willSpendOp)}
-            description="Toggle if you'll spend OP"
+            description="Toggle if you're willing to spend OP"
         />
 
         {formData.willSpendOp && (
@@ -87,7 +87,7 @@ export default function FormContainer({ formData, updateField }: FormContainerPr
                     placeholder="Headhunting rolls"
                     value={formData.pulls}
                     onChange={e => updateField('pulls', e.target.value)}
-                    description="How many headhunting permits do you have rn"
+                    description="How many Headhunting Permits do you have on your account"
                 />
             </div>
         )}

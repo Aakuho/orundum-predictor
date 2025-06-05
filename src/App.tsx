@@ -110,7 +110,7 @@ function App() {
               label="Originite Prime needed for Spark"
               value={results.originitePrimeNeeded.toLocaleString()}
               icon={opIcon}
-              description="Additional Orundum needed to reach desired spark"
+              description="Additional OP needed to reach desired spark (-1 if 'Will spend OP?' is not ticked)"
             />
           </div>
         </div>
