@@ -35,7 +35,7 @@ export default function FormContainer({ formData, updateField }: FormContainerPr
             placeholder="End Date"
             value={formData.endDate}
             onChange={e => updateField('endDate', e.target.value)}
-            description="End date of your farm"
+            description="End date of your farm (little invisible calendar picker on the far right of the input)"
         />
         <Input
             type="number"
