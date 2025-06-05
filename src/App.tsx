@@ -47,34 +47,34 @@ function App() {
         <FormContainer formData={formData} updateField={updateField} />
         <hr className="border-t border-orundum m-5" />
 
-<div className="space-y-2 text-sm font-mono">
-      <div>
-        <b>Days until End Date</b> <span className="float-right">{results.daysRemaining}</span>
-      </div>
+      <div className="space-y-2 text-sm font-mono">
+        <div>
+          <b>Days until End Date</b> <span className="float-right">{results.daysRemaining}</span>
+        </div>
       <div>
         <b>Weeks until End Date</b> <span className="float-right">{results.weeksRemaining}</span>
       </div>
 
       <div className="mt-4">
         <ResultRow
-              label="Annihilation Orundum Total"
-              value={results.anniOrundum.toLocaleString()}
-              icon={orundumIcon}
-            />
+          label="Annihilation Orundum Total"
+          value={results.anniOrundum.toLocaleString()}
+          icon={orundumIcon}
+        />
       </div>
+        <div>
+          <ResultRow
+            label="Mission Orundum Total"
+            value={results.missionsOrundum.toLocaleString()}
+            icon={orundumIcon}
+          />
+        </div>
       <div>
-            <ResultRow
-              label="Mission Orundum Total"
-              value={results.missionsOrundum.toLocaleString()}
-              icon={orundumIcon}
-            />
-      </div>
-      <div>
-            <ResultRow
-              label="Monthly Card Orundum Total"
-              value={results.orundumNeededForSpark.toLocaleString()}
-              icon={orundumIcon}
-            />
+        <ResultRow
+          label="Monthly Card Orundum Total"
+          value={results.membershipOrundum.toLocaleString()}
+          icon={orundumIcon}
+        />
       </div>
 
       <hr className="border-t border-orundum m-5" />
@@ -92,11 +92,11 @@ function App() {
             <div className="text-xs text-gray-400">Will you reach the spark from Orundum farming alone?</div>
           </div>
           <div>
-              <ResultRow
-              label="Pulls needed for Spark"
-              value={results.pullsNeededForSpark.toLocaleString()}
-              icon={headhuntIcon}
-              description="Additional Orundum needed to reach desired spark"
+            <ResultRow
+            label="Pulls needed for Spark"
+            value={results.pullsNeededForSpark.toLocaleString()}
+            icon={headhuntIcon}
+            description="Additional Orundum needed to reach desired spark"
             />
           </div>
             <ResultRow

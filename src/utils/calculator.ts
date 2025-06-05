@@ -27,7 +27,6 @@ export function calculateOrundum(data: FormValues) {
   const annihilationCap = toNum(data.annihilationCap);
   const sparkCap = toNum(data.sparkCap);
   const opAmount = toNum(data.opAmount);
-  const shards = toNum(data.shards);
   const pulls = toNum(data.pulls);
 
   const today = new Date();
@@ -42,9 +41,6 @@ export function calculateOrundum(data: FormValues) {
   const missionsOrundum = data.includeMissions ? (daysRemaining * 100 + weeksRemaining * 500) : 0;
   const membershipOrundum = data.includeMembership ? daysRemaining * 200 : 0;
   const opOrundum = data.willSpendOp ? opAmount * 300 : 0;
-  const hoursRemaining = daysRemaining * 24;
-  const shardOrundum = shards * hoursRemaining;
-  const pullOrundum = pulls * 600;
 
   const totalOrundum =
     currentOrundum +
@@ -52,13 +48,11 @@ export function calculateOrundum(data: FormValues) {
     missionsOrundum +
     membershipOrundum;
 
-
-
   const totalPulls = Math.floor(totalOrundum / 600) + pulls;
 
-  const pullsNeededForSpark = sparkCap - totalPulls;
-  const orundumNeededForSpark = (sparkCap - totalPulls) * 600;
-  const originitePrimeNeeded = Math.ceil((orundumNeededForSpark - opOrundum) / 180);
+  const pullsNeededForSpark = Math.max(0, sparkCap - totalPulls);
+  const orundumNeededForSpark = Math.max(0, (sparkCap - totalPulls) * 600);
+  const originitePrimeNeeded = Math.max(0, Math.ceil((orundumNeededForSpark - opOrundum) / 180));
 
   const willReachSpark = totalPulls >= sparkCap;
   console.log(totalOrundum, sparkCap);

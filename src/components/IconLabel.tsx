@@ -6,10 +6,10 @@ type IconLabelProps = {
 };
 
 export default function IconLabel({ icon, children }: IconLabelProps) {
-  return (
-    <span className="inline-flex items-center gap-1">
-      <img src={icon} alt="" className="w-4 h-4" />
-      {children}
+    return (
+        <span className="inline-flex items-center gap-1">
+        <img src={icon} alt="" className="w-4 h-4" />
+        {children}
     </span>
-  );
+    );
 }
