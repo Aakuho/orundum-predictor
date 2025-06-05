@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+  @theme {
+    --color-orundum: #D41112;
+    --color-hint: gainsboro;
+    --color-background: #151515;
+    --color-foreground: #121212;
+  }
+
+body {
+  background-color: var(--color-background);
+  color: #eee;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
