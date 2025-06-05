@@ -78,13 +78,18 @@ function App() {
       </div>
 
       <hr className="border-t border-orundum m-5" />
-      <div className="mt-4 text-lg font-bold">
-        Total Expected Orundum <span className="float-right">{results.totalOrundum.toLocaleString()}</span>
+      <div className='text-lg font-bold'>
+        <ResultRow
+        label="Total Expected Orundum"
+        value={results.totalOrundum.toLocaleString()}
+        icon={orundumIcon}
+        />
+        <ResultRow
+        label="Total Pulls"
+        value={results.totalPulls.toLocaleString()}
+        icon={headhuntIcon}
+        />
       </div>
-      <div className="text-lg font-bold">
-        Total Pulls <span className="float-right">{results.totalPulls}</span>
-      </div>
-
       {results.sparkCap > 0 && (
         <div className="mt-6 space-y-1">
           <div>
